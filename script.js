@@ -5,6 +5,13 @@ let tfidfMatrix = [];
 let cosineSim = [];
 let indices = {};
 
+// Helper function to clean movie titles
+function cleanMovieTitle(title) {
+    if (!title) return '';
+    // Remove both single and double quotes from start and end
+    return title.replace(/^["']|["']$/g, '').trim();
+}
+
 // Load movies data
 async function loadMovies() {
     try {
@@ -15,7 +22,11 @@ async function loadMovies() {
         const rows = data.split('\n').slice(1); // Skip header
         movies = rows.map(row => {
             const [id, title, genres] = row.split(',');
-            return { id, title, genres: genres || '' };
+            return { 
+                id, 
+                title: cleanMovieTitle(title), // Clean the title here
+                genres: genres || '' 
+            };
         });
 
         // Create movie titles array for autocomplete
