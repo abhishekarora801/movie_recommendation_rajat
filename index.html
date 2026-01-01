@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Movie Recommendation Portal</h1>
+        <p class="description">This app recommends movies based on genre similarity. Enter a movie title below to get started!</p>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="movieSearch" list="movies" placeholder="Type to search movies..." 
+                       aria-label="Enter a movie title (e.g., Toy Story (1995))">
+                <datalist id="movies"></datalist>
+            </div>
+            <div class="select-box">
+                <select id="numRecommendations">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="suggestions" class="suggestions-container"></div>
+        <div id="recommendations" class="recommendations-container"></div>
+
+        <div id="loader" class="loader hidden">Finding similar movies...</div>
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <footer>
+        <p>Made with ❤️ by Rajat</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
