@@ -14,29 +14,66 @@ with open('styles.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Title and description
-st.title("🎬 Movie Recommendation Portal")
-st.markdown("""
-This app recommends movies based on genre similarity. Enter a movie title below to get started!
-""")
+st.markdown("<h1 style='text-align: center;'>🎬 Movie Recommendation Portal</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>This app recommends movies based on genre similarity. Enter a movie title below to get started!</p>", unsafe_allow_html=True)
 
 # Load movie titles for autocomplete
 from recommender import get_movie_titles
 
-# Input section
+# Get all movie titles
+all_movies = get_movie_titles()
+
+# Create a text input with HTML datalist for autocomplete
+st.markdown("""
+    <datalist id="movies">
+        {}
+    </datalist>
+    """.format('\n'.join(f'<option value="{movie}">' for movie in all_movies)), 
+    unsafe_allow_html=True
+)
+
+# Input section with aligned columns
 col1, col2 = st.columns([3, 1])
+
 with col1:
-    movie = st.selectbox("Enter a movie title", get_movie_titles(), key="movie_input")
+    search_term = st.text_input(
+        "Enter a movie title (e.g., Toy Story (1995))", 
+        key="search_input",
+        help="Start typing to see suggestions",
+        value="",
+        placeholder="Type to search movies...",
+    )
+
 with col2:
     n_recommendations = st.selectbox("Number of recommendations", [5, 10, 15, 20], key="n_select")
 
-# Recommendation section
-if st.button("🔍 Find Similar Movies"):
-    if movie:
+# Add the datalist to the input using JavaScript
+st.markdown("""
+    <script>
+    const input = document.querySelector('input[aria-label="Enter a movie title (e.g., Toy Story (1995))"]');
+    input.setAttribute('list', 'movies');
+    </script>
+    """, 
+    unsafe_allow_html=True
+)
+
+# Show suggestions and recommendations as user types
+if search_term:
+    # Filter movies based on search term
+    filtered_movies = [m for m in all_movies if search_term.lower() in m.lower()][:5]  # Limit to top 5 suggestions
+    
+    # Show matching suggestions
+    if filtered_movies:
+        st.markdown("### Matching Movies:")
+        for suggestion in filtered_movies:
+            st.markdown(f"- {suggestion}")
+        
+        # Get recommendations based on the first match
         with st.spinner('Finding similar movies...'):
-            result = recommend(movie, n=n_recommendations)
+            result = recommend(filtered_movies[0], n=n_recommendations)
             
             if result['status'] == 'success':
-                st.success(f"Found recommendations based on '{result['input_title']}'!")
+                st.success(f"Recommendations based on '{result['input_title']}':")
                 
                 # Display recommendations
                 for movie in result['recommendations']:
@@ -50,10 +87,9 @@ if st.button("🔍 Find Similar Movies"):
                         """, unsafe_allow_html=True)
             else:
                 st.error(result['message'])
-                st.info("Try entering a different movie title!")
     else:
-        st.warning("Please enter a movie title!")
+        st.info("No matching movies found. Try a different search term!")
 
 # Footer
 st.markdown("---")
-st.markdown("Made with ❤️ by Rajat")
+st.markdown("<p style='text-align: center;'>Made with ❤️ by Rajat</p>", unsafe_allow_html=True)
