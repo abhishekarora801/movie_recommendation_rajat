@@ -224,7 +224,12 @@ function displayRecommendations(result) {
         ${result.recommendations.map(movie => `
             <div class="movie-card">
                 <h3>${movie.title}</h3>
-                <p class="similarity-score">Similarity: ${movie.similarity_score}%</p>
+                <div class="movie-card-content">
+                    <div class="similarity-bar-container">
+                        <div class="similarity-bar" style="width: ${movie.similarity_score}%"></div>
+                        <span class="similarity-score">${movie.similarity_score}%</span>
+                    </div>
+                </div>
                 <p>Genres: ${movie.genres.map(genre => 
                     `<span class="genre-tag">${genre}</span>`).join(' ')}
                 </p>
