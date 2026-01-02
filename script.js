@@ -5,11 +5,11 @@ let tfidfMatrix = [];
 let cosineSim = [];
 let indices = {};
 
-// Helper function to clean movie titles
-function cleanMovieTitle(title) {
-    if (!title) return '';
+// Helper function to clean text by removing quotes
+function cleanText(text) {
+    if (!text) return '';
     // Remove both single and double quotes from start and end
-    return title.replace(/^["']|["']$/g, '').trim();
+    return text.replace(/^["']|["']$/g, '').trim();
 }
 
 // Load movies data
@@ -24,8 +24,8 @@ async function loadMovies() {
             const [id, title, genres] = row.split(',');
             return { 
                 id, 
-                title: cleanMovieTitle(title), // Clean the title here
-                genres: genres || '' 
+                title: cleanText(title),
+                genres: genres ? cleanText(genres) : ''
             };
         });
 
@@ -160,7 +160,7 @@ function getRecommendations(title, n = 5) {
 
     const recommendations = topN.map(([movieIdx, score]) => ({
         title: movies[movieIdx].title,
-        genres: movies[movieIdx].genres.split('|'),
+        genres: movies[movieIdx].genres.split('|').map(genre => cleanText(genre)),
         similarity_score: Math.round(score * 100)
     }));
 
