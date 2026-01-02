@@ -613,7 +613,7 @@ movieId,title,genres
 773,Touki Bouki (1973),Drama
 775,Spirits of the Dead (1968),Horror|Mystery
 778,Trainspotting (1996),Comedy|Crime|Drama
-779,'Til There Was You (1997),Drama|Romance
+779,Til There Was You (1997),Drama|Romance
 780,Independence Day (a.k.a. ID4) (1996),Action|Adventure|Sci-Fi|Thriller
 781,Stealing Beauty (1996),Drama
 782,"Fan, The (1996)",Drama|Thriller
@@ -1536,7 +1536,7 @@ movieId,title,genres
 2069,"Trip to Bountiful, The (1985)",Drama
 2070,Tender Mercies (1983),Drama|Romance|Western
 2071,And the Band Played On (1993),Drama
-2072,"'burbs, The (1989)",Comedy
+2072,"burbs, The (1989)",Comedy
 2073,Fandango (1985),Comedy
 2074,"Night Porter, The (Portiere di notte, Il) (1974)",Crime|Drama|Romance
 2075,Mephisto (1981),Drama|War
@@ -2352,7 +2352,7 @@ movieId,title,genres
 3108,"Fisher King, The (1991)",Comedy|Drama|Fantasy|Romance
 3109,"River, The (1984)",Drama
 3111,Places in the Heart (1984),Drama
-3112,'night Mother (1986),Drama
+3112,night Mother (1986),Drama
 3113,End of Days (1999),Action|Fantasy|Horror|Mystery|Thriller
 3114,Toy Story 2 (1999),Adventure|Animation|Children|Comedy|Fantasy
 3115,Flawless (1999),Drama
@@ -5527,7 +5527,7 @@ movieId,title,genres
 26554,"Quiet Earth, The (1985)",Drama|Mystery|Sci-Fi
 26555,Spies Like Us (1985),Comedy
 26562,White Nights (1985),Drama
-26564,'Round Midnight (1986),Drama|Musical
+26564,Round Midnight (1986),Drama|Musical
 26567,Club Paradise (1986),Comedy
 26578,"Sacrifice, The (Offret - Sacraficatio) (1986)",Drama
 26585,"Better Tomorrow, A (Ying hung boon sik) (1986)",Crime|Drama|Thriller
@@ -5689,7 +5689,7 @@ movieId,title,genres
 27741,"Twilight Samurai, The (Tasogare Seibei) (2002)",Drama|Romance
 27744,"Facing Windows (Finestra di fronte, La) (2003)",Drama|Romance
 27746,Ginger Snaps: Unleashed (2004),Horror|Thriller
-27751,'Salem's Lot (2004),Drama|Horror|Mystery|Thriller
+27751,Salem's Lot (2004),Drama|Horror|Mystery|Thriller
 27762,Comic Book: The Movie (2004),Comedy
 27768,Intimate Strangers (Confidences trop intimes) (2004),Drama
 27769,Down to the Bone (2004),Drama
@@ -8013,7 +8013,7 @@ movieId,title,genres
 97701,Paranormal Activity 4 (2012),Horror|IMAX
 97742,Alex Cross (2012),Action|Crime|Mystery|Thriller
 97752,Cloud Atlas (2012),Drama|Sci-Fi|IMAX
-97757,'Hellboy': The Seeds of Creation (2004),Action|Adventure|Comedy|Documentary|Fantasy
+97757,Hellboy': The Seeds of Creation (2004),Action|Adventure|Comedy|Documentary|Fantasy
 97785,Silent Hill: Revelation 3D (2012),Horror|Mystery|Thriller
 97836,Here Comes the Boom (2012),Action|Comedy
 97858,Mental (2012),Comedy|Drama
@@ -8599,7 +8599,7 @@ movieId,title,genres
 117646,Dragonheart 2: A New Beginning (2000),Action|Adventure|Comedy|Drama|Fantasy|Thriller
 117849,La Belle Verte (1996),Comedy
 117851,Penguins of Madagascar (2014),Adventure|Animation|Children|Comedy
-117867,'71 (2014),Action|Drama|Thriller|War
+117867,71 (2014),Action|Drama|Thriller|War
 117877,The Rabbi's Cat (Le chat du rabbin) (2011),Adventure|Animation
 117881,Still Alice (2014),Drama
 117887,Paddington (2014),Children|Comedy
@@ -9182,7 +9182,7 @@ movieId,title,genres
 149350,Lumberjack Man (2015),Comedy|Horror
 149352,Daddy's Home (2015),Comedy
 149354,Sisters (2015),Children|Comedy
-149380,'Tis the Season for Love (2015),Romance
+149380,Tis the Season for Love (2015),Romance
 149406,Kung Fu Panda 3 (2016),Action|Adventure|Animation
 149508,Spellbound (2011),Comedy|Romance
 149566,Unicorn City (2012),Comedy|Romance
