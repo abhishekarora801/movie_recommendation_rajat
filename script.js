@@ -117,7 +117,8 @@ function calculateCosineSimilarity(vec1, vec2) {
 // Fuzzy match movie title
 function fuzzyMatch(title) {
     if (!title) return null;
-    
+
+    //exact match check for full title
     if (indices.hasOwnProperty(title)) {
         return title;
     }
